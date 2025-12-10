@@ -1,4 +1,4 @@
-const users = require('../models/userMODEL')
+const users = require('../')
 const jwt = require('jsonwebtoken')
 //register controller
 //register api request
@@ -53,8 +53,8 @@ exports.loginController = async (req,res)=>{
 //  google login controller
 exports.googleLoginController = async (req,res)=>{
     console.log('Inside googleLoginController');
-    const {email,password01,username,profilepic} = req.body
-    // console.log(email,password01,username,profilepic);
+    const {email,password01,username,picture} = req.body
+    // console.log(email,password01,username,picture);
     try{
         //check mail in model
         const existingUser = await users.findOne({email})
